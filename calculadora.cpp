@@ -35,13 +35,14 @@ int main() {
     double n1, n2, resultado, adicao, subtracao, divisao, multiplicacao;
     int potencia, potencia3;
 
-    cout << "Digite o primeiro numero: ";
-    cin >> n1;
-    cout << "Digite o segundo numero: ";
-    cin >> n2;
+    do {
 
-     for (int i = 0; i < 1; i++) {
-        calculadora1 = 0;
+        cout << "Digite o primeiro numero: ";
+        cin >> n1;
+        cout << "Digite o segundo numero: ";
+        cin >> n2;
+
+        cout << endl;
         cout << "Escolha a operacao: " << endl;
         cout << "1 - Adicao" << endl;
         cout << "2 - Subtracao" << endl;
@@ -49,6 +50,7 @@ int main() {
         cout << "4 - Multiplicacao" << endl;
         cout << "5 - Potencia" << endl;
         cout << "6 - Potencia ao cubo" << endl;
+        cout << "0 - Sair" << endl;
         cin >> calculadora1;
 
         switch (calculadora1) {
@@ -80,11 +82,14 @@ int main() {
                 potencia3 = pow(n1, 3);
                 cout << "Resultado da potencia ao cubo: " << potencia3 << endl;
                 break;
+            case 0:
+                cout << "Saindo..." << endl;
+                break;
             default:
                 cout << "Opcao invalida!" << endl;
                 break;
         }
-    }
+    } while (calculadora1 != 0);
 
     return 0;
 }
